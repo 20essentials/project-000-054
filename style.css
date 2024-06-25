@@ -1,0 +1,220 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none !important;
+}
+
+
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background-image: url('assets/estrellas.gif');
+}
+
+.center {
+  position: relative;
+
+  .part-top {
+    background-color: #00ffff44;
+    width: 180px;
+    height: 230px;
+    align-content: center;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+
+    .container-left {
+      position: absolute;
+      top: 0px;
+      left: 1px;
+      transform-style: preserve-3d;
+      width: 378px;
+      height: 234px;
+      background-color: #00ffff44;
+      transform-origin: 0% 0%;
+      transform: rotateY(87deg) skewY(-18deg);
+    }
+
+    .container-right {
+      position: absolute;
+      top: 0px;
+      right: 1px;
+      transform-style: preserve-3d;
+      width: 378px;
+      height: 234px;
+      background-color: #00ffff44;
+      transform-origin: 100% 100%;
+      transform: rotateY(-87deg) skewY(18deg);
+    }
+
+    .container-trasero {
+      height: 169px;
+      width: 104px;
+      background-color: #00ffff44;
+      position: absolute;
+      top: -56px;
+      left: 90px;
+      transform-style: preserve-3d;
+      transform: rotateX(0deg) translateX(-50%);
+    }
+
+    .way {
+      height: 554px;
+      width: 130px;
+      background-color: #00ffff44;
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+      position: absolute;
+      bottom: -202px;
+      left: 50%;
+      transform: rotateX(81deg) translateX(-50%);
+    }
+
+    .container-tapa {
+      height: 554px;
+      width: 132px;
+      background-color: #00ffff44;
+      position: absolute;
+      top: -312px;
+      left: 90px;
+      transform-style: preserve-3d;
+      transform: rotateX(76deg) translateX(-50%); 
+    }
+
+
+    .content {
+      background-image: url('assets/first.png');
+      background-repeat: no-repeat;
+      width: calc(576px / 9);
+      height: 64px;
+      scale: 1;
+      background-position: 0px -6px;
+      margin-inline: auto;
+    }
+  }
+
+  .part-bottom {
+    background-color: aliceblue;
+    width: 180px;
+    height: 60px;
+    border-radius: 0 0 30px 30px;
+    align-content: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 1000;
+    pointer-events: none;
+
+    .circle {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: black;
+      position: absolute;
+      top: 50%;
+    }
+
+    .circle1 {
+      left: 12px;
+      transform: translateY(-50%);
+    }
+
+    .circle2 {
+      right: 12px;
+      transform: translateY(-50%);
+    }
+
+    .keys {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      place-content: center;
+      pointer-events: none;
+
+      .k-column:nth-child(odd) {
+        align-content: center;
+      }
+
+      .key {
+        width: 24px;
+        height: 24px;
+        background-color: #80808044;
+        transition: .3s;
+        display: flex;
+        flex-wrap: wrap;
+        place-content: center;
+        pointer-events: auto;
+        position: relative;
+        z-index: 1000;
+        border: none;
+        outline: none;
+
+        &:hover {
+          filter: invert(1);
+        }
+
+      }
+
+      .key.iluminado {
+        filter: invert(1);
+      }
+    }
+  }
+}
+
+
+@keyframes animate1 {
+  0% {
+    background-position: 0px -5px;
+  }
+
+  100% {
+    background-position: -576px -5px;
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    background-position: 0px -67px;
+  }
+
+  100% {
+    background-position: -576px -67px;
+  }
+}
+
+@keyframes animate3 {
+  0% {
+    background-position: 0px -130px;
+  }
+
+  100% {
+    background-position: -576px -130px;
+  }
+}
+
+@keyframes animate4 {
+  0% {
+    background-position: 0px -320px;
+  }
+
+  100% {
+    background-position: -576px -320px;
+  }
+}
+
+@media (width <= 1000px) and (orientation: landscape) {
+  .center {
+    scale: .68;
+    top: .8rem;
+  }
+}
